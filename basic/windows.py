@@ -36,3 +36,10 @@ with sync_playwright() as p:
 
     print(new_page.title())
     new_page.close()  # Close the new tab
+
+    context.tracing.stop(path = "trace.zip")
+    # to close the page
+    page.close()
+    # to close the browser
+    browser.close()
+
